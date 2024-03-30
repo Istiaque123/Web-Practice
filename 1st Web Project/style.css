@@ -111,6 +111,9 @@ h4{
 -------------------------------
         header
 */
+.inner-header{
+    line-height: 80px;
+}
 .inner-header :where(.wrap, .menu > ul), .list-inline > ul{
     display: flex;
     align-items: center;
