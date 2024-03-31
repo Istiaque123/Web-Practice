@@ -107,6 +107,36 @@ h4{
     margin: 0, auto;
 }
 
+.item-floationg{
+    position: absolute;
+    font-size: 10px;
+    font-weight: var(--fw600);
+    top: -8px;
+    right: 0;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    width: 20px;
+    height: 20px;
+ 
+    border-radius: 50%;
+}
+
+
+/* 
+-------------------
+    grouped selector
+*/
+
+.item-floationg, .header-center .branding{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
 /* 
 -------------------------------
         header
@@ -123,9 +153,9 @@ h4{
 }
 
 .header-center nav{
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr;
-    gap: 180px;
+    gap: 180px; 
     max-width: 720px;
 }
 
@@ -134,14 +164,60 @@ h4{
     left: 0;
     right: 0;
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     pointer-events: none;
 }
-.header-center .branding{
+.header-center .branding {
     font-family: var(--second-font);
     font-size: 30px;
     line-height: inherit;
     pointer-events: auto;
+}
+.header-center .menu > ul > li> a {
+    font-size: var(--fs14);
+    font-weight: var(--fw600);
+    text-transform: uppercase;
+    padding: 0 15px ;
+}
+
+.header-right ul{
+    justify-content: flex-end;   
+}
+
+.list-inline a
+.menu-trigge{
+    position: relative;
+    font-size: 24px;
+    padding: 0, 10px;
+    line-height: 1;
+    display: flex;
+    transition:  var(--transition-color);
+}
+
+.list-inline a:hover{
+    color: var(--light-color);
+
+}
+.header-left .list-inline{
+    display: none;
+}
+:where(.header-left, .header-right) li{
+    display: flex;
+}
+
+
+
+
+
+
+@media (min-width: 992px){
+    .menu-trigge{
+        display: none;
+        
+    }
+    .header-center nav{
+        display: grid;
+    }
+    .header-left .list-inline{
+        display: block;
+    }
 }
